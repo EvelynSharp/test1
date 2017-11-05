@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { getReviewList } from '../actions/reviews';
 import { Button, Header, Container, List, Icon } from 'semantic-ui-react';
 import ReviewListItem from './ReviewListItem';
+import Summary from './Summary';
 
 const Hdr = glamorous.div({
   textAlign: 'center',
@@ -13,7 +14,6 @@ const Hdr = glamorous.div({
 })
 
 const Btn = glamorous.div({
-  margin: '0 auto 10% auto !important',
   color: 'rgba(124, 37, 65, 1) !important',
   backgroundColor: 'transparent !important',
   border: '2px solid rgba(124, 37, 65, 1)!important',
@@ -27,6 +27,7 @@ const ListStyle = glamorous.div({
   width: '300px',
   textAlign: 'left !important',
   marginBottom: '5%',
+  paddingLeft: '30px !important',
 })
 
 
@@ -40,9 +41,12 @@ class ReviewsList extends React.Component {
     const { reviews, history } = this.props;
     return (
       <Container style={{ textAlign: 'center !important' }}>
-        <Header as={Hdr}>Reviews</Header>
         <div>
+          <Header as={Hdr}>Reviews</Header>
           <Button as={Btn} onClick={()=>history.push('/')}>Back To Home</Button>
+          { reviews.length > 0 &&
+            <Summary reviews={reviews} />
+          }
         </div>
         <List selection relaxed='very' as={ListStyle} horizontal>
           { reviews.length > 0 &&
