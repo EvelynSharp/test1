@@ -1,0 +1,2 @@
+export const GET_REVIEW_LIST = 'GET_REVIEW_LIST';
+export const GET_REVIEW_DETAIL = 'GET_REVIEW_DETAIL';
