@@ -1,6 +1,16 @@
 import React from 'react';
+import glamorous from 'glamorous';
 import { connect } from 'react-redux';
 import { getReviewList } from '../actions/reviews';
+import { Button, Header, Container, List } from 'semantic-ui-react';
+import ReviewListItem from './ReviewListItem';
+
+const Hdr = glamorous.div({
+  textAlign: 'center',
+  fontFamily: 'Pacifico, cursive !important',
+  fontSize: '2em !important',
+  marginTop: '5% !important',
+})
 
 class ReviewsList extends React.Component {
 
@@ -11,16 +21,15 @@ class ReviewsList extends React.Component {
   render() {
     const { reviews, history } = this.props;
     return (
-      <div>
-        { reviews.length > 0 && reviews.map( r => {
-          return (
-            <div key={r.id}>
-              <span>{`rating: ${r.rating}`}</span>
-              <span onClick={() => history.push(`reviews/${r.id}`)}>View Details</span>
-            </div>
-          )
-        })}
-      </div>
+      <Container>
+        <Header as={Hdr}>Reviews</Header>
+        <List selection relaxed='very'>
+          { reviews.length > 0 &&
+            reviews.map( review => <ReviewListItem history={history} review={review} /> )
+          }
+        </List>
+
+      </Container>
     )
   }
 }
