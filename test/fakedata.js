@@ -20,6 +20,7 @@ export const longList = [
     publish_date: '2016-09-05T23:25:47.642350Z',
     id: '9783221620868',
     author: 'Kaley Schiller',
+    body: 'For ever and a day.',
   },
   {
     rating: 3,
