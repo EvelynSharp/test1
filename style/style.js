@@ -10,7 +10,7 @@ export const Wrapper = glamorous.div({
   alignItems: 'center',
 });
 
-export const Btn = glamorous.div({
+export const Btn = glamorous.button({
   color: 'rgba(124, 37, 65, 1) !important',
   backgroundColor: 'transparent !important',
   border: '2px solid rgba(124, 37, 65, 1)!important',

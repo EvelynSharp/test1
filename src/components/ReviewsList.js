@@ -7,7 +7,7 @@ import ReviewListItem from './ReviewListItem';
 import Summary from './Summary';
 import { Btn, HeaderStyle } from '../../style/style';
 
-const Hdr = glamorous.div(HeaderStyle, {
+const Hdr = glamorous.h3(HeaderStyle, {
   fontSize: '2.5em !important',
   marginTop: '5% !important',
 })
@@ -49,7 +49,7 @@ class ReviewsList extends React.Component {
 
         <div>
 
-        { reviews.length > 10 &&
+        { reviews.length >= 10 &&
           <Icon
             onClick={()=>scroll(0,0)}
             name='angle double up'

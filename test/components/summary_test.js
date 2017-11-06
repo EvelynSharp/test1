@@ -1,35 +1,20 @@
 import { renderComponent , expect } from '../test_helper';
 import Summary from '../../src/components/Summary';
+import { shortList } from '../fakedata';
 
 describe('Summary' , () => {
   let component;
 
   beforeEach(() => {
-    const props = {
-      reviews: [
-        {
-          rating: 2,
-          publish_date: '2016-09-05T23:25:47.642350Z',
-          id: '9783221620868',
-          author: 'Kaley Schiller',
-        },
-        {
-          rating: 3,
-          publish_date: '2016-09-04T23:25:47.642388Z',
-          id: '9793364045824',
-          author: 'Ann Peterson',
-          body: 'Can one desire too much of a good thing?',
-        }
-      ]
-    };
+    const props = { reviews: shortList };
     component = renderComponent(Summary, props, {});
   });
 
-  it('has a count seciont', () => {
+  it('has a count section', () => {
     expect(component.find('.css-glamorous-span--aqrj1k')).to.contain('Count:');
   });
 
-  it('has an average seciont', () => {
+  it('has an average section', () => {
     expect(component.find('.css-glamorous-span--aqrj1k')).to.contain('Average:');
   });
 

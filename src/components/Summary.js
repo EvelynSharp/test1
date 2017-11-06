@@ -12,15 +12,20 @@ const Result = glamorous.span({
   marginRight: '1em',
 })
 
+const SummaryContainer = glamorous.div({
+  margin: '2% auto',
+  textAlign: 'center',
+})
+
 const Summary = ({reviews}) => (
-  <div style={{ margin: '2% auto', textAlign: 'center'}}>
+  <SummaryContainer>
     <Category>Count:</Category>
     <Result>{reviews.length}</Result>
     <Category>Average:</Category>
     <Result>
       { Math.round( 100 * reviews.reduce( (t,r) => t+=r.rating, 0) / reviews.length) / 100 }
     </Result>
-  </div>
+  </SummaryContainer>
 );
 
 export default Summary;
