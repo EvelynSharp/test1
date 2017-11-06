@@ -1,21 +1,11 @@
 import React from 'react';
 import { Button, Header } from 'semantic-ui-react';
 import glamorous from 'glamorous';
+import { Wrapper, HeaderStyle } from '../../style/style';
 
-const HomeContainer = glamorous.div({
-  height: '100vh',
-  background: `linear-gradient(rgba(124, 37, 65, 1),rgba(0, 0, 0, 1))`,
-  display: 'flex',
-  flexFlow: 'column wrap',
-  alignContent: 'center',
-  justifyContent: 'center',
-  alignItems: 'center',
-});
 
-const Hdr = glamorous.div({
-  textAlign: 'center',
+const Hdr = glamorous.div(HeaderStyle, {
   color: 'white !important',
-  fontFamily: 'Pacifico, cursive !important',
   fontSize: '5em !important',
   marginBottom: '4% !important',
 })
@@ -33,12 +23,12 @@ const Btn = glamorous.div({
 
 
 const Home = ({history}) => (
-  <HomeContainer>
+  <Wrapper>
     <Header as={Hdr}>Shakespeare Reviews</Header>
     <Button as={Btn} onClick={() => history.push('/reviews')}>
       Review List
     </Button>
-  </HomeContainer>
+  </Wrapper>
 )
 
 export default Home;

@@ -5,23 +5,14 @@ import { getReviewList } from '../actions/reviews';
 import { Button, Header, Container, List, Icon } from 'semantic-ui-react';
 import ReviewListItem from './ReviewListItem';
 import Summary from './Summary';
+import { Btn, HeaderStyle } from '../../style/style';
 
-const Hdr = glamorous.div({
-  textAlign: 'center',
-  fontFamily: 'Pacifico, cursive !important',
+const Hdr = glamorous.div(HeaderStyle, {
   fontSize: '2.5em !important',
   marginTop: '5% !important',
 })
 
-const Btn = glamorous.div({
-  color: 'rgba(124, 37, 65, 1) !important',
-  backgroundColor: 'transparent !important',
-  border: '2px solid rgba(124, 37, 65, 1)!important',
-  ':hover': {
-    color: 'white !important',
-    backgroundColor: 'rgba(124, 37, 65, 1) !important',
-  },
-})
+
 
 const ListStyle = glamorous.div({
   width: '300px',
@@ -34,7 +25,9 @@ const ListStyle = glamorous.div({
 class ReviewsList extends React.Component {
 
   componentWillMount = () => {
-    this.props.dispatch(getReviewList())
+    if(this.props.reviews.length < 2 ) {
+      this.props.dispatch(getReviewList())
+    }
   }
 
   render() {

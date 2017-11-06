@@ -11,11 +11,12 @@ export const getReviewList = () => {
   }
 }
 
-export const getReviewDetail = (id) => {
+export const getReviewDetail = (id, cb) => {
   return(dispatch) => {
     axios.get(`http://shakespeare.podium.co/api/reviews/${id}`, { 'headers': { 'Authorization': TOKEN }})
       .then( ({data}) => {
         dispatch({ type: GET_REVIEW_DETAIL, review: data.data})
+        cb();
       })
   }
 }
