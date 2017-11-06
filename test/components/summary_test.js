@@ -25,6 +25,14 @@ describe('Summary' , () => {
     component = renderComponent(Summary, props, {});
   });
 
+  it('has a count seciont', () => {
+    expect(component.find('.css-glamorous-span--aqrj1k')).to.contain('Count:');
+  });
+
+  it('has an average seciont', () => {
+    expect(component.find('.css-glamorous-span--aqrj1k')).to.contain('Average:');
+  });
+
   it('shows the right review count', () => {
     expect(component.find('.css-glamorous-span--1gm9t97')).to.contain('2');
   });
