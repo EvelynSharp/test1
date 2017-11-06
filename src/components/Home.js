@@ -4,13 +4,13 @@ import glamorous from 'glamorous';
 import { Wrapper, HeaderStyle } from '../../style/style';
 
 
-const Hdr = glamorous.div(HeaderStyle, {
+const Hdr = glamorous.h1(HeaderStyle, {
   color: 'white !important',
   fontSize: '5em !important',
   marginBottom: '4% !important',
 })
 
-const Btn = glamorous.div({
+const Btn = glamorous.button({
   color: 'white !important',
   width: '150px',
   backgroundColor: 'transparent !important',

@@ -12,7 +12,6 @@ const Hdr = glamorous.div(HeaderStyle, {
 })
 
 
-
 class ReviewDetail extends React.Component {
 
   componentWillMount = () => {

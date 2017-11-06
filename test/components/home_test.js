@@ -8,7 +8,20 @@ describe('Home' , () => {
     component = renderComponent(Home);
   });
 
-  it('renders something', () => {
-    expect(component).to.exist;
+  it('has a header', () => {
+    expect(component.find('h1')).to.exist;
   });
+
+  it('shows a header with correct text', () => {
+    expect(component.find('h1')).to.contain('Shakespeare Reviews');
+  });
+
+  it('has a button', () => {
+    expect(component.find('button')).to.exist;
+  });
+
+  it('shows a button with correct text', () => {
+    expect(component.find('button')).to.contain('Review List');
+  });
+
 });
