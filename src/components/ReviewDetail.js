@@ -41,7 +41,7 @@ class ReviewDetail extends React.Component {
                 <span style={{ fontWeight: 'bold', color: '#2d5089' }}>{` ${review.author} `}</span>
                 <span>{`on ${review.publish_date.slice(0, 10)}`}</span>
               </Card.Meta>
-              <Card.Description style={{ minHeight: '5em'}}>
+              <Card.Description style={{ minHeight: '5em', paddingBottom: '1em'}}>
                 {review.body}
               </Card.Description>
               <Card.Content extra>
