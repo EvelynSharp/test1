@@ -24,4 +24,12 @@ describe('Home' , () => {
     expect(component.find('button')).to.contain('Review List');
   });
 
+  // describe('has the right styles', () => {
+  //
+  //   it('has the right text style', () => {
+  //     expect(component.find('.css-glamorous-h1--15n29tx')).to.have.css('font-size', '2em');
+  //   })
+  // });
+
+
 });

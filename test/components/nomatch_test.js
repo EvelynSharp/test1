@@ -17,5 +17,13 @@ describe('NoMatch' , () => {
     expect(component).to.contain('No Route matches /abc 404');
   });
 
+  describe('has the right styles', () => {
+
+    it('has the right text style', () => {
+      expect(component.find('h1')).to.have.css('font-size', '2em');
+      expect(component.find('h1')).to.have.css('font-family', 'Open Sans');
+    })
+  });
+
 
 });
