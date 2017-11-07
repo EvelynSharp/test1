@@ -1,11 +1,11 @@
 import { renderComponent , expect } from '../test_helper';
 import ReviewsList from '../../src/components/ReviewsList';
-import { shortList, longList } from '../fakedata';
+import { shortList1, longList } from '../fakedata';
 
 describe('ReviewsList' , () => {
   let component;
 
-  describe('With 10 or more reviews and with circular icon', () => {
+  describe('With 10 or more reviews', () => {
     beforeEach(() => {
       const stateprops = { reviews: longList };
       component = renderComponent(ReviewsList, null, stateprops);
@@ -17,10 +17,10 @@ describe('ReviewsList' , () => {
 
   });
 
-  describe('Less than 10 reviews and w/o circular icon', () => {
+  describe('Less than 10 reviews', () => {
 
     beforeEach(() => {
-      const stateprops = { reviews: shortList };
+      const stateprops = { reviews: shortList1 };
       component = renderComponent(ReviewsList, null, stateprops);
     });
 
@@ -62,4 +62,9 @@ describe('ReviewsList' , () => {
 
 });
 
-//TODO: test history.push; test scroll to top
+/*TODO:
+test history.push;
+test scroll to top;
+if no props passed in - then will call ajax call
+
+*/

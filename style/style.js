@@ -2,6 +2,7 @@ import glamorous from 'glamorous';
 
 export const Wrapper = glamorous.div({
   height: '100vh',
+  minHeight: '350px',
   background: `linear-gradient(rgba(124, 37, 65, 1),rgba(0, 0, 0, 1))`,
   display: 'flex',
   flexFlow: 'column nowrap',

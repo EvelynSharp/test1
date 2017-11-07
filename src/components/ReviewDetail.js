@@ -5,7 +5,7 @@ import { getReviewDetail } from '../actions/reviews';
 import { Card, Icon, Rating, Button, Header } from 'semantic-ui-react';
 import { Wrapper, Btn, HeaderStyle } from '../../style/style';
 
-const Hdr = glamorous.div(HeaderStyle, {
+const Hdr = glamorous.h3(HeaderStyle, {
   fontSize: '2.5em !important',
   marginTop: '5% !important',
   color: 'white !important',

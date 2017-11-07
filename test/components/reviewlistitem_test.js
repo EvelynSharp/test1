@@ -1,12 +1,12 @@
 import { renderComponent , expect } from '../test_helper';
 import ReviewListItem from '../../src/components/ReviewListItem';
-import { shortList } from '../fakedata';
+import { shortList1 } from '../fakedata';
 
 describe('ReviewListItem' , () => {
   let component;
 
   beforeEach(() => {
-    const props = { review: shortList[1] };
+    const props = { review: shortList1[1] };
     component = renderComponent(ReviewListItem, props, {});
   });
 

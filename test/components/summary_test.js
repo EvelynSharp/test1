@@ -1,12 +1,12 @@
 import { renderComponent , expect } from '../test_helper';
 import Summary from '../../src/components/Summary';
-import { shortList } from '../fakedata';
+import { shortList1 } from '../fakedata';
 
 describe('Summary' , () => {
   let component;
 
   beforeEach(() => {
-    const props = { reviews: shortList };
+    const props = { reviews: shortList1 };
     component = renderComponent(Summary, props, {});
   });
 
