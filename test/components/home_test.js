@@ -1,28 +1,50 @@
 import { renderComponent , expect } from '../test_helper';
 import Home from '../../src/components/Home';
+import sinon from 'sinon';
 
 describe('Home' , () => {
-  let component;
+  describe('elements rendered correctly', () => {
+    let component;
+    beforeEach(() => {
+      component = renderComponent(Home);
+    });
+    it('has a header', () => {
+      expect(component.find('h1')).to.exist;
+    });
 
-  beforeEach(() => {
-    component = renderComponent(Home);
+    it('shows a header with correct text', () => {
+      expect(component.find('h1')).to.contain('Shakespeare Reviews');
+    });
+
+    it('has a button', () => {
+      expect(component.find('button')).to.exist;
+    });
+
+    it('shows a button with correct text', () => {
+      expect(component.find('button')).to.contain('Review List');
+    });
   });
 
-  it('has a header', () => {
-    expect(component.find('h1')).to.exist;
-  });
+  describe('button click', () => {
+    let component;
+    const logSpy = sinon.spy();
 
-  it('shows a header with correct text', () => {
-    expect(component.find('h1')).to.contain('Shakespeare Reviews');
-  });
+    beforeEach(() => {
+      const props = {
+        history: {
+          push: () => logSpy('/'),
+        }
+      }
+      component = renderComponent(Home, props, {});
+    });
 
-  it('has a button', () => {
-    expect(component.find('button')).to.exist;
-  });
+    it('should call history.push on button click', () => {
+      component.find('button').simulate('click')
+      expect(logSpy).to.have.been.calledOnce;
+      expect(logSpy).to.have.been.calledWithExactly('/');
+    })
+  })
 
-  it('shows a button with correct text', () => {
-    expect(component.find('button')).to.contain('Review List');
-  });
 
   // describe('has the right styles', () => {
   //

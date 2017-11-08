@@ -51,7 +51,7 @@ class ReviewsList extends React.Component {
 
         { reviews.length >= 10 &&
           <Icon
-            onClick={()=>scroll(0,0)}
+            onClick={()=>window.scrollTo(0,0)}
             name='angle double up'
             size='large'
             color='grey'

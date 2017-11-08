@@ -5,6 +5,7 @@ import TestUtils from 'react-addons-test-utils';
 import jsdom from 'jsdom';
 import chai, { expect } from 'chai';
 import chaiJquery from 'chai-jquery';
+import sinonChai from 'sinon-chai';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from '../src/reducers';
@@ -16,6 +17,7 @@ global.window = global.document.defaultView;
 global.navigator = global.window.navigator;
 const $ = _$(window);
 //set up chai-jquery
+chai.use(sinonChai);
 chaiJquery(chai, chai.util, $);
 
 function renderComponent(ComponentClass, props = {}, state = {}) {

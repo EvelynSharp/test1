@@ -15,6 +15,14 @@ describe('ReviewsList' , () => {
       expect(component.find('.circular')).to.exist;
     });
 
+    it('scrolls to the top if circular icon is clicked', () => {
+      // component.simulate('scrollTo', '(100, 10000)');
+      //window.scrollTo(100, 10000)
+      // expect(window.pageXOffset).to.equal(100);
+      component.find('.circular').simulate('click');
+      expect(window.pageXOffset).to.equal(0);
+    })
+
   });
 
   describe('Less than 10 reviews', () => {
