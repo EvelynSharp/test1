@@ -13,7 +13,6 @@ const App = () => (
       <Route path="/reviews/:id" component={ReviewDetail} />
       <Route component={NoMatch} />
     </Switch>
-
   </div>
 );
 

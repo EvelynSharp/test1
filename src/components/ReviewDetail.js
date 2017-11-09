@@ -26,32 +26,40 @@ class ReviewDetail extends React.Component {
     return (
       <Wrapper>
         <Header as={Hdr}>Review Details</Header>
-        {review &&
-          <Card centered>
-            <Card.Content>
-              <Icon style={{ float: 'right', color: 'rgba(124, 37, 65, 1)' }} size='large'>
-                {review.rating}
-              </Icon>
-              <Card.Header>
-                <Rating icon='star' defaultRating={Math.round(review.rating)} maxRating={5} disabled/>
-              </Card.Header>
-              <Card.Meta>
-                <span>By</span>
-                <span style={{ fontWeight: 'bold', color: '#2d5089' }}>{` ${review.author} `}</span>
-                <span>{`on ${review.publish_date.slice(0, 10)}`}</span>
-              </Card.Meta>
-              <Card.Description style={{ minHeight: '5em', paddingBottom: '1em'}}>
-                {review.body}
-              </Card.Description>
-              <Card.Content extra>
-                <div className='ui two buttons'>
-                  <Button as={Btn} onClick={() => history.push('/')}>Home</Button>
-                  <Button as={Btn} onClick={() => history.push('/reviews')}>Back</Button>
+        <Card centered>
+          <Card.Content>
+            <div>
+              {review ?
+                <div>
+                  <Icon style={{ float: 'right', color: 'rgba(124, 37, 65, 1)' }} size='large'>
+                    {review.rating}
+                  </Icon>
+                  <Card.Header>
+                    <Rating icon='star' defaultRating={Math.round(review.rating)} maxRating={5} disabled/>
+                  </Card.Header>
+                  <Card.Meta>
+                    <span>By</span>
+                    <span style={{ fontWeight: 'bold', color: '#2d5089' }}>{` ${review.author} `}</span>
+                    <span>{`on ${review.publish_date.slice(0, 10)}`}</span>
+                  </Card.Meta>
+                  <Card.Description style={{ minHeight: '5em', paddingBottom: '1em'}}>
+                    {review.body}
+                  </Card.Description>
                 </div>
-              </Card.Content>
+                :
+                <Card.Description style={{ minHeight: '5em', paddingBottom: '1em'}}>
+                  Invalid review id, review not found
+                </Card.Description>
+              }
+            </div>
+            <Card.Content extra>
+              <div className='ui two buttons'>
+                <Button as={Btn} onClick={() => history.push('/')}>Home</Button>
+                <Button as={Btn} onClick={() => history.push('/reviews')}>Back</Button>
+              </div>
             </Card.Content>
-          </Card>
-        }
+          </Card.Content>
+        </Card>
       </Wrapper>
     )
   }
